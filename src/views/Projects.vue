@@ -21,7 +21,7 @@
     </nav>
   </header>
   <main>
-    <div v-if="error">Sorry! It seems we can't fetch data right now 😥</div>
+    <div v-if="errors">Sorry! It seems we can't fetch data right now 😥</div>
     <section v-else>
       <div v-if="loading">😴 Loading ...</div>
       <div class="" v-else>
@@ -91,7 +91,7 @@ export default {
     async fetchData() {
       try {
         const res = await fetch(
-          `https://api.github.com/users/rodionsibov/repos?per_page=${this.perPage}&page=${this.page}`
+          `${process.env.VUE_APP_API}?per_page=${this.perPage}&page=${this.page}`
         );
         const data = await res.json();
         console.log(data);
@@ -99,7 +99,7 @@ export default {
         this.projects.forEach((project) => {
           if (
             project.language !== null &&
-            this.skills.includes(project.language)
+            !this.skills.includes(project.language)
           )
             this.skills.push(project.language);
         });
