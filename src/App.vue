@@ -5,11 +5,7 @@
     <div class="bg-gray-400 p-8 flex justify-center">
       <ul class="absolute space-y-2 -mt-32" style="bottom: 124px">
         <transition name="fade" v-for="email in 5" :key="email">
-          <li
-            v-show="visible"
-            class="transform"
-            :class="`rotate-${Math.floor(Math.random() * 10)}`"
-          >
+          <li v-show="visible" class="transform" :class="`rotate-${Math.floor(Math.random() * 10)}`">
             <a
               href=""
               class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
