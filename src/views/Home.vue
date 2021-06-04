@@ -1,5 +1,5 @@
 <template>
-  <img src="" alt="" />
+  <img src="https://avatars.githubusercontent.com/u/60054035?v=4" alt="" />
   <h1>Hi there 👋, I am Rodion</h1>
   <h2>
     I'm a web developer. My passion is to develop modern and responsive

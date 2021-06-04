@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="" alt="" />
+    <img src="https://avatars.githubusercontent.com/u/60054035?v=4" alt="" />
     <h1>Hi there 👋, I am Rodion</h1>
     <h2>
       I'm a web developer. My passion is to develop modern and responsive
@@ -37,11 +37,7 @@
               <h5>Updated at:</h5>
               <div>{{ new Date(project.updated_at).toDateString() }}</div>
             </div>
-            <img
-              :src="project.owner.avatar_url"
-              alt=""
-              style="width: 30px; border-radius: 50%"
-            />
+            <img class="w-8 h-8 rounded-full" :src="project.owner.avatar_url" alt="" />
           </div>
           <div class="">
             <a :href="project.html_url" target="_blank">View Code</a>
