@@ -1,4 +1,5 @@
 # portfolio-api
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bbadf3d9-3ee7-4465-84d2-c46c2befdb63/deploy-status)](https://app.netlify.com/sites/gallant-yalow-50e70e/deploys)
 
 ## Project setup
 ```
