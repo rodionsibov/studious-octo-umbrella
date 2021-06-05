@@ -33,6 +33,7 @@
                   id: project.name,
                   name: project.name,
                   description: project.description,
+                  url: project.html_url,
                 },
               }"
               class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"

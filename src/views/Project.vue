@@ -20,7 +20,7 @@
     <!-- link -->
     <div class="flex justify-center mt-6">
       <a
-        href=""
+        :href="$route.params.url"
         class="text-gray-900 px-4 py-2 border border-gray-500 rounded hover:border-gray-900"
       >
         <i class="fab fa-github fa-lg fa-fw"></i>
