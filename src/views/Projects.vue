@@ -1,72 +1,93 @@
 <template>
   <div>
-    <div v-if="isErrors">Sorry! It seems we can't fetch data right now 😥</div>
+    <div
+      v-if="isErrors"
+      class="flex flex-col gap-4 justify-center items-center p-8 min-h-screen text-center text-xl"
+    >
+      Sorry! It seems we can't fetch data right now 😥
+      <router-link
+        to="/"
+        class="text-sm hover:underline p-1 text-gray-500 hover:text-gray-900"
+        >Go Home</router-link
+      >
+    </div>
     <div v-else>
-      <div v-if="isLoading">😴 Loading ...</div>
-      <div v-else>
-        <div class="p-8 flex justify-center">
-          <ul class="space-y-2">
-            <transition
-              name="fade"
-              v-for="(project, index) in projectsList"
-              :key="index"
-            >
-              <li
-                class=""
-                :class="`rotate-${Math.floor(Math.random() * 10)}`"
-              >
-                <router-link
-                  to=""
-                  class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
-                >
-                  <img
-                    :src="project.owner.avatar_url"
-                    alt="avatar"
-                    class="rounded-full w-10 h-10"
-                  />
-                  <div class="ml-4">
-                    <div class="font-semibold text-gray-900">
-                      {{ project.name }}
-                    </div>
-                    <div class="text-left text-gray-700 overflow-clip">
-                      {{ project.description }}
-                    </div>
-                  </div>
-                </router-link>
-              </li>
-            </transition>
-          </ul>
-        </div>
+      <div
+        v-if="isLoading"
+        class="flex justify-center items-center min-h-screen"
+      >
+        😴 Loading ...
       </div>
-      <div v-if="!isLoading" class="text-center mb-6">
-        <div v-if="projectsList.length < projects.length">
-          <button
-            @click="loadMore"
-            class="hover:underline hover:text-gray-900 text-gray-500"
-          >
-            Load More
-          </button>
-        </div>
-        <div v-else>
-          <a
-            class="hover:underline hover:text-gray-900 text-gray-500"
-            href="https://github.com/rodionsibov"
-            target="_blank"
-            >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <div class="text-xl font-semibold text-center text-gray-900">Development Skills</div>
-        <ul class="flex justify-center gap-3 p-4">
+      <div v-else class="p-8 flex items-center flex-col gap-6">
+        <ul class="space-y-2">
           <li
-            v-for="(skill, index) in skills"
+            v-for="(project, index) in projectsList"
             :key="index"
-            class="text-sm font-semibold border px-2 py-1 rounded bg-gray-100"
+            class=""
+            :class="`rotate-${Math.floor(Math.random() * 10)}`"
           >
-            {{ skill }}
+            <router-link
+              :to="{
+                name: 'Project',
+                params: {
+                  id: project.name,
+                  name: project.name,
+                  description: project.description,
+                },
+              }"
+              class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
+            >
+              <img
+                :src="project.owner.avatar_url"
+                alt="avatar"
+                class="rounded-full w-10 h-10"
+              />
+              <div class="ml-4 truncate pr-2">
+                <div class="font-semibold text-gray-900 truncate capitalize">
+                  {{ styleTitle(project.name) }}
+                </div>
+                <div
+                  class="text-left text-gray-700 truncate"
+                  :title="project.description"
+                >
+                  {{ project.description }}
+                </div>
+              </div>
+            </router-link>
           </li>
         </ul>
+        <div v-if="!isLoading">
+          <div v-if="projectsList.length < projects.length">
+            <button
+              @click="loadMore"
+              class="hover:underline hover:text-gray-900 text-gray-500 p-1"
+            >
+              Load More
+            </button>
+          </div>
+          <div v-else>
+            <a
+              class="hover:underline hover:text-gray-900 text-gray-500 p-1"
+              href="https://github.com/rodionsibov"
+              target="_blank"
+              >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xl font-semibold text-center text-gray-900">
+            Development Skills
+          </div>
+          <ul class="flex justify-center gap-3 p-4">
+            <li
+              v-for="(skill, index) in skills"
+              :key="index"
+              class="text-sm font-semibold border px-2 py-1 rounded bg-gray-100"
+            >
+              {{ skill }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -87,9 +108,8 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-        }, 3000);
-      this.fetchData();
+    setTimeout(() => {}, 3000);
+    this.fetchData();
   },
   methods: {
     async fetchData() {
@@ -124,25 +144,15 @@ export default {
         this.projectsList = this.projects.slice(0, this.projectsCount);
       }
     },
-    trimTitle(text) {
-      let title = text.replaceAll("-", " ").replace("_", " ");
-      if (title.length > 15) {
-        return title.slice(0, 12) + "...";
-      }
-      return title;
-    },
-    trimText(text) {
-      if (text.length > 100) {
-        return text.slice(0, 100) + "...";
-      }
-      return text;
+    styleTitle(text) {
+      return text.replaceAll("-", " ");
     },
   },
 };
 </script>
 
 <style>
-/* .fade-enter-active,
+.fade-enter-active,
 .fade-leave-active {
   transition: all 0.15s ease-in;
 }
@@ -151,5 +161,5 @@ export default {
 .fade-leave-to {
   transform: translate(0, 100px) rotate(0deg) !important;
   opacity: 0;
-} */
+}
 </style>

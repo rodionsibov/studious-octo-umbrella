@@ -7,7 +7,7 @@
     <!-- title & description -->
     <div>
       <div class="font-semibold">
-        Project Name
+        {{ $route.params.name }}
       </div>
       <div>
         Updated at:
@@ -16,7 +16,7 @@
         </span>
       </div>
       <div class="text-left text-gray-700">
-        Project discription goes here
+        {{ $route.params.description }}
       </div>
     </div>
     <!-- link -->
@@ -28,7 +28,6 @@
 
 <script>
 export default {
-  props: ["project"],
 };
 </script>
 
