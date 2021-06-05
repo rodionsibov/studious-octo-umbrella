@@ -18,7 +18,7 @@
       >
         😴 Loading ...
       </div>
-      <div v-else class="p-8 flex items-center flex-col gap-6">
+      <div v-else class="p-8 flex items-center flex-col gap-8">
         <ul class="space-y-2">
           <li
             v-for="(project, index) in projectsList"
