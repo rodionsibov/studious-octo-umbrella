@@ -1,6 +1,6 @@
 <template>
   <router-view />
-  <div>
+  <div class="flex justify-center p-3 text-sm text-gray-500">
     <span
       >© Developed by
       <a href="https://github.com/rodionsibov"> Rodion Sibov</a>
@@ -28,14 +28,5 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.15s ease-in;
-}
 
-.fade-enter-from,
-.fade-leave-to {
-  transform: translate(0, 100px) rotate(0deg) !important;
-  opacity: 0;
-}
 </style>
