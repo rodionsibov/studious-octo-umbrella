@@ -1,67 +1,61 @@
 <template>
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/60054035?v=4" alt="" />
-    <h1>Hi there 👋, I am Rodion</h1>
-    <h2>
-      I'm a web developer. My passion is to develop modern and responsive
-      websites.
-    </h2>
-    <p>
-      I have a life interest for all things web and developing code. The fact is
-      that I get a huge moral satisfaction, when I create or improve something
-      with my own hands. And in programming the results of your actions can be
-      seen instantly. I like it a lot.
-    </p>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/projects">Projects</router-link>
-      <a href="https://rodionsibov.github.io"
-        ><i class="fab fa-github fa-lg fa-fw"></i
-      ></a>
-    </nav>
-  </header>
-  <main>
-    <div v-if="errors">Sorry! It seems we can't fetch data right now 😥</div>
-    <section v-else>
-      <div v-if="loading">😴 Loading ...</div>
-      <div class="" v-else>
-        <div v-for="(project, index) in projectsList" :key="index" class="">
-          <h3 class="">
-            {{ trimTitle(project.name) }}
-          </h3>
-          <p>
-            {{ trimText(project.description) }}
-          </p>
-          <div class="">
-            <div>
-              <h5>Updated at:</h5>
-              <div>{{ new Date(project.updated_at).toDateString() }}</div>
-            </div>
-            <img class="w-8 h-8 rounded-full" :src="project.owner.avatar_url" alt="" />
-          </div>
-          <div class="">
-            <a :href="project.html_url" target="_blank">View Code</a>
-          </div>
-        </div>
-        <div v-if="!loading">
-          <div v-if="projectsList.length < projects.length">
-            <button @click="loadMore">Load More</button>
-          </div>
-          <div v-else>
-            <a href="https://github.com/rodionsibov" target="_blank"
-              >Visit My Github</a
+  <div>
+    <div v-if="isErrors">Sorry! It seems we can't fetch data right now 😥</div>
+    <div v-else>
+      <div v-if="isLoading">😴 Loading ...</div>
+      <div v-else>
+        <div class="bg-gray-400 p-8 flex justify-center">
+          <ul class="absolute space-y-2 -mt-32" style="bottom: 124px">
+            <transition
+              name="fade"
+              v-for="(project, index) in projectsList"
+              :key="index"
             >
-          </div>
-        </div>
-        <div>
-          <h2>Development Skills</h2>
-          <ul class="">
-            <li v-for="(skill, index) in skills" :key="index">{{ skill }}</li>
+              <li
+                class="transform"
+                :class="`rotate-${Math.floor(Math.random() * 10)}`"
+              >
+                <a
+                  href=""
+                  class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
+                >
+                  <img
+                    :src="project.owner.avatar_url"
+                    alt="avatar"
+                    class="rounded-full w-10 h-10"
+                  />
+                  <div class="ml-4">
+                    <div class="font-semibold">
+                      {{ trimTitle(project.name) }}
+                    </div>
+                    <div class="text-left text-gray-700">
+                      {{ trimText(project.description) }}
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </transition>
           </ul>
         </div>
       </div>
-    </section>
-  </main>
+      <div v-if="!isLoading">
+        <div v-if="projectsList.length < projects.length">
+          <button @click="loadMore">Load More</button>
+        </div>
+        <div v-else>
+          <a href="https://github.com/rodionsibov" target="_blank"
+            >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
+          ></a>
+        </div>
+      </div>
+      <div>
+        <h2>Development Skills</h2>
+        <ul>
+          <li v-for="(skill, index) in skills" :key="index">{{ skill }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -74,8 +68,8 @@ export default {
       projectsList: [],
       projectsCount: 5,
       skills: [],
-      loading: true,
-      errors: false,
+      isLoading: true,
+      isErrors: false,
     };
   },
   mounted() {
@@ -101,9 +95,9 @@ export default {
         });
       } catch (error) {
         console.log(error);
-        this.errors = true;
+        this.isErrors = true;
       }
-      this.loading = false;
+      this.isLoading = false;
       this.getProjects();
     },
     getProjects() {
