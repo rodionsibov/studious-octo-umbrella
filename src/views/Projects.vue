@@ -12,7 +12,7 @@
               :key="index"
             >
               <li
-                class="transform"
+                class=""
                 :class="`rotate-${Math.floor(Math.random() * 10)}`"
               >
                 <router-link
@@ -28,7 +28,7 @@
                     <div class="font-semibold text-gray-900">
                       {{ project.name }}
                     </div>
-                    <div class="text-left text-gray-700 overflow-ellipsis">
+                    <div class="text-left text-gray-700 overflow-clip">
                       {{ project.description }}
                     </div>
                   </div>
@@ -88,8 +88,8 @@ export default {
   },
   mounted() {
     setTimeout(() => {
+        }, 3000);
       this.fetchData();
-    }, 3000);
   },
   methods: {
     async fetchData() {
@@ -142,7 +142,7 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition: all 0.15s ease-in;
 }
@@ -151,5 +151,5 @@ export default {
 .fade-leave-to {
   transform: translate(0, 100px) rotate(0deg) !important;
   opacity: 0;
-}
+} */
 </style>

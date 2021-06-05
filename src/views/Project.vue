@@ -7,16 +7,16 @@
     <!-- title & description -->
     <div>
       <div class="font-semibold">
-        {{ trimTitle(project.name) }}
+        Project Name
       </div>
       <div>
         Updated at:
         <span>
-          {{ new Date(project.updated_at).toDateString() }}
+          {{ new Date().toDateString() }}
         </span>
       </div>
       <div class="text-left text-gray-700">
-        {{ trimText(project.description) }}
+        Project discription goes here
       </div>
     </div>
     <!-- link -->
