@@ -14,7 +14,7 @@
     <div v-else>
       <div
         v-if="isLoading"
-        class="flex justify-center items-center min-h-screen"
+        class="flex justify-center items-center min-h-screen animate-pulse"
       >
         😴 Loading ...
       </div>
