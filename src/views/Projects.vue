@@ -34,6 +34,7 @@
                   name: project.name,
                   description: project.description,
                   url: project.html_url,
+                  updated: project.updated_at
                 },
               }"
               class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
@@ -44,7 +45,7 @@
                 class="rounded-full w-10 h-10"
               />
               <div class="ml-4 truncate pr-2">
-                <div class="font-semibold text-gray-900 truncate capitalize">
+                <div class="font-semibold truncate capitalize">
                   {{ styleTitle(project.name) }}
                 </div>
                 <div
@@ -76,7 +77,7 @@
           </div>
         </div>
         <div>
-          <div class="text-xl font-semibold text-center text-gray-900">
+          <div class="text-xl font-semibold text-center">
             Development Skills
           </div>
           <ul class="flex justify-center gap-3 p-4">

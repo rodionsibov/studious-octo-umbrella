@@ -1,15 +1,17 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-center items-center gap-4 px-8 pt-8">
+  <div
+    class="min-h-screen flex flex-col justify-center items-center gap-4 px-8 pt-8"
+  >
     <img
       class="w-40 h-40 rounded-full mb-4"
       src="https://avatars.githubusercontent.com/u/60054035?v=4"
       alt=""
     />
     <div class="text-center">
-      <h1 class="text-gray-900 text-2xl">Hi there 👋, I am Rodion</h1>
-      <div class="text-gray-900 text-xl font-bold">I'm a web developer.</div>
+      <h1 class="text-2xl">Hi there 👋, I am Rodion</h1>
+      <div class="text-xl font-bold">Web developer</div>
     </div>
-    <div class="text-gray-900 mb-3 space-y-4">
+    <div class="mb-3 space-y-4">
       <p>My passion is to develop modern and responsive websites.</p>
       <p>
         I have a life interest for all things web and developing code. The fact

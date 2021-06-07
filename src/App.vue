@@ -1,14 +1,16 @@
 <template>
-  <router-view />
-  <div class="flex justify-center p-3 text-sm text-gray-500">
-    <span
-      >© Developed by
-      <a href="https://github.com/rodionsibov"> Rodion Sibov</a>
-    </span>
-    <span>
-      &nbsp; &bull;
-      {{ date }}
-    </span>
+  <div class="antialiased text-gray-900">
+    <router-view />
+    <div class="flex justify-center p-3 text-sm text-gray-500">
+      <span
+        >© Developed by
+        <a href="https://github.com/rodionsibov"> Rodion Sibov</a>
+      </span>
+      <span>
+        &nbsp; &bull;
+        {{ date }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -28,5 +30,4 @@ export default {
 </script>
 
 <style>
-
 </style>

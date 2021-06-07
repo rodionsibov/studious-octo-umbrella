@@ -1,37 +1,45 @@
 <template>
-  <div class="min-h-screen flex flex-col gap-3 p-8">
-    <!-- image -->
-      <img class="" src="https://picsum.photos/300" alt="" />
-    <!-- title & description -->
-    <div>
-      <div class="text-xs text-gray-500">
-        Updated at:
-        <span class="font-semibold">
-          {{ new Date().toDateString() }}
-        </span>
+  <div class="min-h-screen flex flex-col p-4 bg-gray-200">
+    <div class="bg-white border rounded-lg overflow-hidden shadow-md">
+      <img class="w-full" src="https://picsum.photos/300" alt="" />
+      <div class="p-6 space-y-3">
+        <div class="text-2xl capitalize">
+          {{ name }}
+        </div>
+        <div class="text-xs uppercase text-gray-600 tracking-wide">
+          Updated at:
+          <span class="font-semibold">
+            {{ updated }}
+          </span>
+        </div>
+        <div class="">
+          {{ $route.params.description }}
+        </div>
       </div>
-      <div class="text-2xl text-gray-900 capitalize">
-        {{ $route.params.name.replaceAll("-", " ") }}
+      <div class="flex justify-center m-8">
+        <a
+          :href="$route.params.url"
+          class="px-4 py-2 border border-gray-500 rounded hover:border-gray-900"
+        >
+          <i class="fab fa-github fa-lg fa-fw"></i>
+          View the Code
+        </a>
       </div>
-    </div>
-    <div class="text-gray-900">
-      {{ $route.params.description }}
-    </div>
-    <!-- link -->
-    <div class="flex justify-center mt-6">
-      <a
-        :href="$route.params.url"
-        class="text-gray-900 px-4 py-2 border border-gray-500 rounded hover:border-gray-900"
-      >
-        <i class="fab fa-github fa-lg fa-fw"></i>
-        View the Code
-      </a>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    name() {
+      return this.$route.params.name?.replaceAll("-", " ") || "Title";
+    },
+    updated() {
+      return new Date(this.$route.params.updated).toDateString();
+    },
+  },
+};
 </script>
 
 <style>
