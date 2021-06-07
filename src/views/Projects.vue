@@ -34,7 +34,7 @@
                   name: project.name,
                   description: project.description,
                   url: project.html_url,
-                  updated: project.updated_at
+                  updated: project.updated_at,
                 },
               }"
               class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
@@ -45,7 +45,7 @@
                 class="rounded-full w-10 h-10"
               />
               <div class="ml-4 truncate pr-2">
-                <div class="font-semibold truncate capitalize">
+                <div class="font-semibold truncate capitalize text-gray-900">
                   {{ styleTitle(project.name) }}
                 </div>
                 <div
@@ -62,14 +62,14 @@
           <div v-if="projectsList.length < projects.length">
             <button
               @click="loadMore"
-              class="hover:underline hover:text-gray-900 text-gray-500 p-1"
+              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
             >
               Load More
             </button>
           </div>
           <div v-else>
             <a
-              class="hover:underline hover:text-gray-900 text-gray-500 p-1"
+              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
               href="https://github.com/rodionsibov"
               target="_blank"
               >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
@@ -84,7 +84,7 @@
             <li
               v-for="(skill, index) in skills"
               :key="index"
-              class="text-sm font-semibold border px-2 py-1 rounded bg-gray-100"
+              class="text-sm font-semibold px-2 py-1 rounded bg-gray-800"
             >
               {{ skill }}
             </li>

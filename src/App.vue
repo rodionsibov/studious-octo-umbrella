@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased text-gray-900">
+  <div class="antialiased text-gray-100 bg-gray-900">
     <router-view />
     <div class="flex justify-center p-3 text-sm text-gray-500">
       <span
