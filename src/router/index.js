@@ -25,7 +25,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = 'VueJS / GitHub API'
+  document.title =  `${to.name} | Portfolio / GitHub API`
   next()
 })
 

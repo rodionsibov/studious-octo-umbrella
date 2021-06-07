@@ -154,14 +154,5 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.15s ease-in;
-}
 
-.fade-enter-from,
-.fade-leave-to {
-  transform: translate(0, 100px) rotate(0deg) !important;
-  opacity: 0;
-}
 </style>
