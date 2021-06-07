@@ -16,8 +16,11 @@
       <p>
         I have a life interest for all things web and developing code. The fact
         is that I get a huge moral satisfaction, when I create or improve
-        something with my own hands. And in programming the results of your
-        actions can be seen instantly. I like it a lot.
+        something with my own hands.
+      </p>
+      <p>
+        And in programming the results of your actions can be seen instantly. I
+        like it a lot.
       </p>
     </div>
     <router-link
@@ -25,7 +28,9 @@
       to="/projects"
       title="Swipe right to view my Projects and Skills"
     >
-      <svg v-for="i in 3" :key="i"
+      <svg
+        v-for="i in 3"
+        :key="i"
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6 animate-ping"
         fill="none"
