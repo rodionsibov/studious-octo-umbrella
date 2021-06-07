@@ -1,16 +1,16 @@
 <template>
-  <div class="min-h-screen flex flex-col p-4 bg-gray-200">
-    <div class="bg-gray-900 border rounded-lg overflow-hidden shadow-md">
+  <div class="min-h-screen flex flex-col p-4 md:w-3/6 m-auto">
+    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md">
       <img class="w-full" src="https://picsum.photos/300" alt="" />
-      <div class="p-6 space-y-3">
-        <div class="text-2xl capitalize">
-          {{ name }}
-        </div>
+      <div class="p-6 space-y-2">
         <div class="text-xs uppercase text-gray-600 tracking-wide">
           Updated at:
           <span class="font-semibold">
             {{ updated }}
           </span>
+        </div>
+        <div class="text-2xl capitalize">
+          {{ name }}
         </div>
         <div class="">
           {{ $route.params.description }}
@@ -19,7 +19,7 @@
       <div class="flex justify-center m-8">
         <a
           :href="$route.params.url"
-          class="px-4 py-2 border border-gray-500 rounded hover:border-gray-900"
+          class="px-4 py-2 border border-gray-500 rounded hover:border-gray-200"
         >
           <i class="fab fa-github fa-lg fa-fw"></i>
           View the Code

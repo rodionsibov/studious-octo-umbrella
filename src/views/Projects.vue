@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="md:w-3/6 m-auto">
     <div
       v-if="isErrors"
       class="flex flex-col gap-4 justify-center items-center p-8 min-h-screen text-center text-xl"

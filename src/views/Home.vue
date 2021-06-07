@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen flex flex-col justify-center items-center gap-4 px-8 pt-8"
+    class="min-h-screen flex flex-col justify-center items-center gap-4 px-8 pt-8 md:w-3/6 m-auto"
   >
     <img
       class="w-40 h-40 rounded-full mb-4"
