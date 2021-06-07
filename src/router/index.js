@@ -8,11 +8,6 @@ const routes = [
     component: Home,
   },
   {
-    path: '/projects',
-    name: 'Projects',
-    component: () => import('../views/Projects.vue')
-  },
-  {
     path: '/projects/:id',
     name: 'Project',
     component: () => import('../views/Project.vue')
@@ -25,7 +20,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title =  `${to.name} | Portfolio / GitHub API`
+  document.title = `${to.name} | Portfolio / GitHub API`
   next()
 })
 

@@ -1,10 +1,10 @@
 <template>
   <div class="antialiased text-gray-100 bg-gray-900">
-    <router-view v-slot="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+
+    <div class="flex scroll-snap-x overflow-scroll no-scrollbar">
+      <router-view />
+    </div>
+
     <div class="flex justify-center p-3 text-sm text-gray-500">
       <span
         >© Developed by
@@ -34,14 +34,14 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease-in;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  transform: translate(0, -100px);
+  transform: translateX(-100%);
   opacity: 0;
-}
+} */
 </style>
