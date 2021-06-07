@@ -25,7 +25,7 @@
         </p>
       </div>
       <div
-        class="flex justify-center text-gray-800 md:hidden"
+        class="flex justify-center text-gray-800"
         title="Swipe right to view my Projects and Skills"
       >
         <svg
