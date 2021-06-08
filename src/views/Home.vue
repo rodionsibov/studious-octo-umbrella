@@ -12,7 +12,7 @@
         <h1 class="text-2xl">Hi there 👋, I am Rodion</h1>
         <div class="text-xl font-bold">Web developer</div>
       </div>
-      <div class="mb-3 space-y-4">
+      <div class="mb-6 space-y-4">
         <p>My passion is to develop modern and responsive websites.</p>
         <p>
           I have a life interest for all things web and developing code. The

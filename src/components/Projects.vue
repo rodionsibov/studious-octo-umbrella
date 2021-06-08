@@ -2,7 +2,7 @@
   <div class="min-h-screen min-w-full scroll-snap-start">
     <div
       v-if="isErrors"
-      class="flex flex-col gap-4 justify-center items-center p-8 min-h-screen text-center text-xl"
+      class="flex flex-col gap-4 justify-center items-center p-8 text-center text-xl"
     >
       Sorry! It seems we can't fetch data right now 😥
       <router-link
@@ -11,10 +11,10 @@
         >Go Home</router-link
       >
     </div>
-    <div v-else>
+    <div v-else class="md:w-1/2 m-auto">
       <div
         v-if="isLoading"
-        class="flex justify-center items-center min-h-screen animate-pulse"
+        class="flex justify-center items-center animate-pulse"
       >
         😴 Loading ...
       </div>
