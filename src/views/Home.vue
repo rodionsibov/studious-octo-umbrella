@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen min-w-full scroll-snap-start">
     <div
-      class="flex flex-col justify-center items-center gap-4 p-8 md:w-1/2 m-auto"
+      class="flex flex-col justify-start items-center gap-4 p-8 md:w-1/2 m-auto min-h-screen"
     >
       <img
         class="w-40 h-40 rounded-full mb-4"
@@ -12,7 +12,7 @@
         <h1 class="text-2xl">Hi there 👋, I am Rodion</h1>
         <div class="text-xl font-bold">Web developer</div>
       </div>
-      <div class="mb-6 space-y-4">
+      <div class="space-y-4">
         <p>My passion is to develop modern and responsive websites.</p>
         <p>
           I have a life interest for all things web and developing code. The
@@ -25,7 +25,7 @@
         </p>
       </div>
       <div
-        class="flex justify-center text-gray-800"
+        class="flex justify-center text-gray-800 mt-10"
         title="Swipe right to view my Projects and Skills"
       >
         <svg
