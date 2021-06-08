@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col p-4 md:w-3/6 m-auto">
+  <div class="min-h-screen flex flex-col p-4 md:w-1/3 m-auto">
     <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md">
       <img class="w-full" src="https://picsum.photos/300" alt="" />
       <div class="p-6 space-y-2">
