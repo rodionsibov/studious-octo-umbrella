@@ -29,7 +29,7 @@
         title="Swipe right to view my Projects and Skills"
       >
         <svg
-          v-for="i in 3"
+          v-for="i in 5"
           :key="i"
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 animate-ping"
