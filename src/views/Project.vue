@@ -1,25 +1,25 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-start p-4 md:w-1/3 m-auto">
-    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-md">
-      <img class="w-full h-60 object-cover" src="https://picsum.photos/400" alt="" />
-      <div class="p-6 space-y-2">
-        <div class="text-xs uppercase text-gray-600 tracking-wide">
+  <div class="">
+    <div class="">
+      <img class="" src="https://picsum.photos/400" alt="" />
+      <div class="">
+        <div class="">
           Updated at:
-          <span class="font-semibold">
+          <span class="">
             {{ updated }}
           </span>
         </div>
-        <div class="text-2xl capitalize">
+        <div class="">
           {{ name }}
         </div>
         <div class="">
           {{ $route.params.description }}
         </div>
       </div>
-      <div class="flex justify-center m-8">
+      <div class="">
         <a
           :href="$route.params.url"
-          class="px-4 py-2 border border-gray-500 rounded hover:border-gray-200"
+          class=""
         >
           <i class="fab fa-github fa-lg fa-fw"></i>
           View the Code

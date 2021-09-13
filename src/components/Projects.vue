@@ -1,30 +1,29 @@
 <template>
-  <div class="min-h-screen min-w-full scroll-snap-start">
+  <div class="">
     <div
       v-if="isErrors"
-      class="flex flex-col gap-4 justify-center items-center p-8 text-center text-xl"
+      class=""
     >
       Sorry! It seems we can't fetch data right now 😥
       <router-link
         to="/"
-        class="text-sm hover:underline p-1 text-gray-500 hover:text-gray-900"
+        class=""
         >Go Home</router-link
       >
     </div>
-    <div v-else class="md:w-1/2 m-auto">
+    <div v-else class="">
       <div
         v-if="isLoading"
         class="flex justify-center items-center animate-pulse"
       >
         😴 Loading ...
       </div>
-      <div v-else class="p-8 flex items-center flex-col gap-8">
-        <ul class="space-y-2">
+      <div v-else class="">
+        <ul class="">
           <li
             v-for="(project, index) in projectsList"
             :key="index"
             class=""
-            :class="`rotate-${Math.floor(Math.random() * 10)}`"
           >
             <router-link
               :to="{
@@ -37,19 +36,19 @@
                   updated: project.updated_at,
                 },
               }"
-              class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
+              class=""
             >
-              <img
+              <!-- <img
                 :src="project.owner.avatar_url"
                 alt="avatar"
-                class="rounded-full w-10 h-10"
-              />
-              <div class="ml-4 truncate pr-2">
-                <div class="font-semibold truncate capitalize text-gray-900">
+                class=""
+              /> -->
+              <div class="">
+                <div class="">
                   {{ styleTitle(project.name) }}
                 </div>
                 <div
-                  class="text-left text-gray-700 truncate"
+                  class=""
                   :title="project.description"
                 >
                   {{ project.description }}
@@ -62,14 +61,14 @@
           <div v-if="projectsList.length < projects.length">
             <button
               @click="loadMore"
-              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
+              class=""
             >
               Load More
             </button>
           </div>
           <div v-else>
             <a
-              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
+              class=""
               href="https://github.com/rodionsibov"
               target="_blank"
               >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
@@ -77,14 +76,14 @@
           </div>
         </div>
         <div>
-          <div class="text-xl font-semibold text-center">
+          <div class="">
             Development Skills
           </div>
-          <ul class="flex justify-center gap-3 p-4">
+          <ul class="">
             <li
               v-for="(skill, index) in skills"
               :key="index"
-              class="text-sm font-semibold px-2 py-1 rounded bg-gray-800"
+              class=""
             >
               {{ skill }}
             </li>
