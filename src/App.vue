@@ -34,14 +34,5 @@ export default {
 </script>
 
 <style>
-/* .fade-enter-active,
-.fade-leave-active {
-  transition: all 0.5s ease-in;
-}
 
-.fade-enter-from,
-.fade-leave-to {
-  transform: translateX(-100%);
-  opacity: 0;
-} */
 </style>
