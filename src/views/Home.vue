@@ -1,13 +1,6 @@
 <template>
   <div class="">
-    <div
-      class=""
-    >
-      <!-- <img
-        class=""
-        src="https://avatars.githubusercontent.com/u/60054035?v=4"
-        alt=""
-      /> -->
+    <div class="">
       <div class="">
         <h1 class="">Hi there 👋, I am Rodion</h1>
         <div class="">Web developer</div>

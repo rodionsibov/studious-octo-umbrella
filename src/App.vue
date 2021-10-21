@@ -1,6 +1,5 @@
 <template>
   <div class="antialiased">
-
     <div class="">
       <router-view />
     </div>
@@ -34,5 +33,4 @@ export default {
 </script>
 
 <style>
-
 </style>
