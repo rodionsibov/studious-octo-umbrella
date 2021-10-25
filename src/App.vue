@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased">
+  <div class="antialiased p-7">
     <div class="">
       <router-view />
     </div>
