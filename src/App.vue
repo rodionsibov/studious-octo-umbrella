@@ -1,5 +1,6 @@
 <template>
   <div class="antialiased p-7">
+    <div class="p-5"><a href="">rodionsibov/</a></div>
     <div class="">
       <router-view />
     </div>
