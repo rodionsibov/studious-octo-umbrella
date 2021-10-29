@@ -5,7 +5,7 @@
         <h1 class="">Hi there 👋, I am Rodion</h1>
         <div class="">Web developer</div>
       </div>
-      <div class="">
+      <div class="bg-blue-50">
         <p>My passion is to develop modern and responsive websites.</p>
         <p>
           I have a life interest for all things web and developing code. The
