@@ -1,6 +1,8 @@
 <template>
   <div class="antialiased">
-    <div class="bg-black text-white p-2 mb-4 inline-block m-auto"><a href="">rodionsibov/</a></div>
+    <div class="bg-black text-white p-2 mb-4 inline-block m-auto">
+      <a href="">rodionsibov/</a>
+    </div>
     <div class="">
       <router-view />
     </div>

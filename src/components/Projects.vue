@@ -1,15 +1,8 @@
 <template>
   <div class="">
-    <div
-      v-if="isErrors"
-      class=""
-    >
+    <div v-if="isErrors" class="">
       Sorry! It seems we can't fetch data right now 😥
-      <router-link
-        to="/"
-        class=""
-        >Go Home</router-link
-      >
+      <router-link to="/" class="">Go Home</router-link>
     </div>
     <div v-else class="">
       <div
@@ -20,11 +13,7 @@
       </div>
       <div v-else class="">
         <ul class="">
-          <li
-            v-for="(project, index) in projectsList"
-            :key="index"
-            class=""
-          >
+          <li v-for="(project, index) in projectsList" :key="index" class="">
             <router-link
               :to="{
                 name: 'Project',
@@ -47,10 +36,7 @@
                 <div class="">
                   {{ styleTitle(project.name) }}
                 </div>
-                <div
-                  class=""
-                  :title="project.description"
-                >
+                <div class="" :title="project.description">
                   {{ project.description }}
                 </div>
               </div>
@@ -59,32 +45,18 @@
         </ul>
         <div v-if="!isLoading">
           <div v-if="projectsList.length < projects.length">
-            <button
-              @click="loadMore"
-              class=""
-            >
-              Load More
-            </button>
+            <button @click="loadMore" class="">Load More</button>
           </div>
           <div v-else>
-            <a
-              class=""
-              href="https://github.com/rodionsibov"
-              target="_blank"
+            <a class="" href="https://github.com/rodionsibov" target="_blank"
               >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
             ></a>
           </div>
         </div>
         <div>
-          <div class="">
-            Development Skills
-          </div>
+          <div class="">Development Skills</div>
           <ul class="">
-            <li
-              v-for="(skill, index) in skills"
-              :key="index"
-              class=""
-            >
+            <li v-for="(skill, index) in skills" :key="index" class="">
               {{ skill }}
             </li>
           </ul>
@@ -153,5 +125,4 @@ export default {
 </script>
 
 <style>
-
 </style>
