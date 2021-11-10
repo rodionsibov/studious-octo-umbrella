@@ -3,7 +3,7 @@
     <div class="bg-blue-900 text-white inline-block p-3 font-bold">
       <router-link to="/">rodionsibov/</router-link>
     </div>
-    <div class="w-1/2 m-auto">
+    <div class="md:w-1/2 m-auto p-3">
       <div class="space-x-4">
         <router-link :to="{ name: 'Home' }" class="hover:underline"
           >Home</router-link
