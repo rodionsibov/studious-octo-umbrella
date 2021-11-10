@@ -1,9 +1,17 @@
 <template>
   <div class="antialiased">
-    <div class="bg-blue-900 text-white p-2 mb-4 inline-block m-auto">
+    <div class="bg-blue-900 text-white inline-block p-3 font-bold">
       <router-link to="/">rodionsibov/</router-link>
     </div>
     <div class="w-1/2 m-auto">
+      <div class="space-x-4">
+        <router-link :to="{ name: 'Home' }" class="hover:underline"
+          >Home</router-link
+        >
+        <router-link :to="{ name: 'About' }" class="hover:underline"
+          >About</router-link
+        >
+      </div>
       <router-view />
     </div>
   </div>
@@ -20,4 +28,7 @@ export default {
 </script>
 
 <style>
+.router-link-exact-active {
+  font-weight: bold;
+}
 </style>

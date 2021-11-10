@@ -1,6 +1,5 @@
 <template>
-  <router-link :to="{ name: 'About' }" class="underline">About</router-link>
-  <div class="">
+    <div class="">
     <div class="">
       <div class="">
         <h1 class="text-3xl mt-5 mb-1 text-blue-900">
