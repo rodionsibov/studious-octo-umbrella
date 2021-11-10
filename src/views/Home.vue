@@ -1,8 +1,11 @@
 <template>
+  <router-link :to="{ name: 'About' }" class="underline">About</router-link>
   <div class="">
     <div class="">
       <div class="">
-        <h1 class="text-3xl mt-5 mb-1 text-blue-900">Hi there 👋, I am Rodion</h1>
+        <h1 class="text-3xl mt-5 mb-1 text-blue-900">
+          Hi there 👋, I am Rodion
+        </h1>
         <div class="font-bold mb-5">Web developer</div>
       </div>
       <div class="space-y-4">
