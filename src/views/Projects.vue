@@ -1,7 +1,7 @@
 <template>
-  <h1 class="text-3xl my-5">Projects</h1>
+  <h1 class="text-3xl my-5">My Projects</h1>
   <div class="my-10">
-    <div v-if="isErrors" class="">
+    <div v-if="isErrors" class="bg-red-100 rounded p-10">
       Sorry! It seems we can't fetch data right now 😥
       <router-link to="/" class="block font-bold mt-5 hover:underline"
         >Go Home</router-link
@@ -42,9 +42,10 @@
           </li>
         </ul>
         <div v-if="!isLoading">
-          <div v-if="projectsList.length < projects.length">
-            <button @click="loadMore" class="my-5 text-gray-500">
-              👉 Load More...
+          <div v-if="projectsList.length < projects.length" class="my-10">
+            👉
+            <button @click="loadMore" class="text-gray-500 hover:underline">
+              Load More...
             </button>
           </div>
           <div v-else>
@@ -102,7 +103,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.fetchData();
-    }, 3000);
+    }, 1000);
   },
   methods: {
     async fetchData() {

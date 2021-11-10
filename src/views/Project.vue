@@ -1,26 +1,23 @@
 <template>
   <div class="">
-    <div class="">
+    <div class="my-10">
       <img class="" src="https://picsum.photos/400" alt="" />
-      <div class="">
+      <div class="my-3">
         <div class="">
           Updated at:
-          <span class="">
+          <span class="font-bold">
             {{ updated }}
           </span>
         </div>
-        <div class="">
+        <div class="text-3xl">
           {{ name }}
         </div>
         <div class="">
           {{ $route.params.description }}
         </div>
       </div>
-      <div class="">
-        <a
-          :href="$route.params.url"
-          class=""
-        >
+      <div class="my-10">
+        <a :href="$route.params.url" class="">
           <i class="fab fa-github fa-lg fa-fw"></i>
           View the Code
           <svg
