@@ -1,9 +1,11 @@
 <template>
-<h1 class="text-3xl my-5">Projects</h1>
-  <div class="">
+  <h1 class="text-3xl my-5">Projects</h1>
+  <div class="my-10">
     <div v-if="isErrors" class="">
       Sorry! It seems we can't fetch data right now 😥
-      <router-link to="/" class="">Go Home</router-link>
+      <router-link to="/" class="block font-bold mt-5 hover:underline"
+        >Go Home</router-link
+      >
     </div>
     <div v-else class="">
       <div
@@ -13,7 +15,7 @@
         😴 Loading ...
       </div>
       <div v-else class="">
-        <ul class="">
+        <ul class="space-y-10">
           <li v-for="(project, index) in projectsList" :key="index" class="">
             <router-link
               :to="{
@@ -26,15 +28,10 @@
                   updated: project.updated_at,
                 },
               }"
-              class=""
+              class="hover:underline"
             >
-              <!-- <img
-                :src="project.owner.avatar_url"
-                alt="avatar"
-                class=""
-              /> -->
               <div class="">
-                <div class="">
+                <div class="text-xl font-bold my-1">
                   {{ styleTitle(project.name) }}
                 </div>
                 <div class="" :title="project.description">
@@ -46,18 +43,39 @@
         </ul>
         <div v-if="!isLoading">
           <div v-if="projectsList.length < projects.length">
-            <button @click="loadMore" class="">Load More</button>
+            <button @click="loadMore" class="my-5 text-gray-500">
+              👉 Load More...
+            </button>
           </div>
           <div v-else>
-            <a class="" href="https://github.com/rodionsibov" target="_blank"
-              >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
-            ></a>
+            <div class="my-10">
+              👉
+              <a
+                href="https://github.com/rodionsibov"
+                target="_blank"
+                class="hover:underline"
+                >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
+              ></a>
+            </div>
           </div>
         </div>
         <div>
-          <div class="">Development Skills</div>
-          <ul class="">
-            <li v-for="(skill, index) in skills" :key="index" class="">
+          <div class="text-2xl mt-20 mb-5">Development Skills</div>
+          <ul class="space-x-2">
+            <li
+              v-for="(skill, index) in skills"
+              :key="index"
+              class="
+                rounded
+                bg-gray-700
+                text-white
+                font-bold
+                inline-block
+                px-2
+                py-1
+                hover:bg-gray-600
+              "
+            >
               {{ skill }}
             </li>
           </ul>
@@ -82,8 +100,9 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {}, 3000);
-    this.fetchData();
+    setTimeout(() => {
+      this.fetchData();
+    }, 3000);
   },
   methods: {
     async fetchData() {
