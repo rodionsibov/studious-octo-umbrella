@@ -16,7 +16,11 @@
       </div>
       <div v-else class="">
         <ul class="space-y-10">
-          <li v-for="(project, index) in projectsList" :key="index" class="">
+          <li
+            v-for="(project, index) in projectsList"
+            :key="index"
+            class="hover:bg-gray-800 p-2 rounded"
+          >
             <router-link
               :to="{
                 name: 'Project',
@@ -44,7 +48,7 @@
         <div v-if="!isLoading">
           <div v-if="projectsList.length < projects.length" class="my-10">
             👉
-            <button @click="loadMore" class="text-gray-500 hover:underline">
+            <button @click="loadMore" class="text-gray-500 hover:underline hover:text-gray-100 text-sm">
               Load More...
             </button>
           </div>

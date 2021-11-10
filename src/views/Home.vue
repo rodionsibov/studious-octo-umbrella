@@ -2,7 +2,7 @@
     <div class="">
     <div class="">
       <div class="">
-        <h1 class="text-3xl mt-5 mb-1 text-blue-900">
+        <h1 class="text-3xl mt-5 mb-1 text-blue-100">
           Hi there 👋, I am Rodion
         </h1>
         <div class="font-bold mb-5">Web developer</div>
@@ -24,7 +24,7 @@
   <router-link
     :to="{ name: 'Projects' }"
     class="p-3 rounded bg-blue-700 hover:bg-blue-600 transition duration-300 text-white inline-block my-5"
-    >Projects</router-link
+    >View Projects</router-link
   >
 </template>
 

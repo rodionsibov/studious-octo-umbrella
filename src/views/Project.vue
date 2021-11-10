@@ -3,7 +3,7 @@
     <div class="my-10">
       <img class="" src="https://picsum.photos/400" alt="" />
       <div class="my-3">
-        <div class="">
+        <div class="my-5 text-sm text-gray-500">
           Updated at:
           <span class="font-bold">
             {{ updated }}

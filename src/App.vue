@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased">
+  <div class="antialiased bg-green-900 text-gray-50 min-h-screen">
     <div class="bg-blue-900 text-white inline-block p-3 font-bold rounded-br">
       <router-link to="/">😉rodionsibov/</router-link>
     </div>
