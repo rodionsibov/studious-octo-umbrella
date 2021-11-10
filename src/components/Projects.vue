@@ -1,4 +1,5 @@
 <template>
+<h1 class="text-3xl my-5">Projects</h1>
   <div class="">
     <div v-if="isErrors" class="">
       Sorry! It seems we can't fetch data right now 😥

@@ -2,10 +2,10 @@
   <div class="">
     <div class="">
       <div class="">
-        <h1 class="">Hi there 👋, I am Rodion</h1>
-        <div class="">Web developer</div>
+        <h1 class="text-3xl mt-5 mb-1 text-blue-900">Hi there 👋, I am Rodion</h1>
+        <div class="font-bold mb-5">Web developer</div>
       </div>
-      <div class="bg-blue-50">
+      <div class="space-y-4">
         <p>My passion is to develop modern and responsive websites.</p>
         <p>
           I have a life interest for all things web and developing code. The
@@ -19,12 +19,13 @@
       </div>
     </div>
   </div>
-  <Projects />
+  <router-link
+    :to="{ name: 'Projects' }"
+    class="p-3 rounded bg-gray-700 text-white inline-block my-5"
+    >Projects</router-link
+  >
 </template>
 
 <script>
-import Projects from "@/components/Projects.vue";
-export default {
-  components: { Projects },
-};
+export default {};
 </script>

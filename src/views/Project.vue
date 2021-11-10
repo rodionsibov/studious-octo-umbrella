@@ -1,4 +1,5 @@
 <template>
+<h1 class="text-3xl">Project</h1>
   <div class="">
     <div class="">
       <img class="" src="https://picsum.photos/400" alt="" />
