@@ -23,7 +23,7 @@
   </div>
   <router-link
     :to="{ name: 'Projects' }"
-    class="p-3 rounded bg-blue-700 hover:bg-blue-600 transition duration-300 text-white inline-block my-5"
+    class="p-3 rounded bg-gray-900 hover:bg-gray-800 transition duration-300 inline-block my-5"
     >View Projects</router-link
   >
 </template>

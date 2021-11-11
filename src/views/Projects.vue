@@ -19,7 +19,7 @@
           <li
             v-for="(project, index) in projectsList"
             :key="index"
-            class="hover:bg-gray-800 p-2 rounded"
+            class="hover:bg-blue-800 p-2 rounded transition duration-300"
           >
             <router-link
               :to="{
