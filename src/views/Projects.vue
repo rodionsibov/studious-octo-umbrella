@@ -1,30 +1,25 @@
 <template>
-  <div class="min-h-screen min-w-full scroll-snap-start">
-    <div
-      v-if="isErrors"
-      class="flex flex-col gap-4 justify-center items-center p-8 text-center text-xl"
-    >
+  <h1 class="text-3xl my-5">My Projects</h1>
+  <div class="my-10">
+    <div v-if="isErrors" class="bg-red-100 rounded p-10">
       Sorry! It seems we can't fetch data right now 😥
-      <router-link
-        to="/"
-        class="text-sm hover:underline p-1 text-gray-500 hover:text-gray-900"
+      <router-link to="/" class="block font-bold mt-5 hover:underline"
         >Go Home</router-link
       >
     </div>
-    <div v-else class="md:w-1/2 m-auto">
+    <div v-else class="">
       <div
         v-if="isLoading"
         class="flex justify-center items-center animate-pulse"
       >
         😴 Loading ...
       </div>
-      <div v-else class="p-8 flex items-center flex-col gap-8">
-        <ul class="space-y-2">
+      <div v-else class="">
+        <ul class="space-y-10">
           <li
             v-for="(project, index) in projectsList"
             :key="index"
-            class=""
-            :class="`rotate-${Math.floor(Math.random() * 10)}`"
+            class="hover:bg-blue-800 p-2 rounded transition duration-300"
           >
             <router-link
               :to="{
@@ -37,21 +32,13 @@
                   updated: project.updated_at,
                 },
               }"
-              class="bg-white shadow-md border rounded-lg p-4 flex items-center hover:bg-gray-100 w-80"
+              class="hover:underline"
             >
-              <img
-                :src="project.owner.avatar_url"
-                alt="avatar"
-                class="rounded-full w-10 h-10"
-              />
-              <div class="ml-4 truncate pr-2">
-                <div class="font-semibold truncate capitalize text-gray-900">
+              <div class="">
+                <div class="text-xl font-bold my-1">
                   {{ styleTitle(project.name) }}
                 </div>
-                <div
-                  class="text-left text-gray-700 truncate"
-                  :title="project.description"
-                >
+                <div class="" :title="project.description">
                   {{ project.description }}
                 </div>
               </div>
@@ -59,32 +46,40 @@
           </li>
         </ul>
         <div v-if="!isLoading">
-          <div v-if="projectsList.length < projects.length">
-            <button
-              @click="loadMore"
-              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
-            >
-              Load More
+          <div v-if="projectsList.length < projects.length" class="my-10">
+            👉
+            <button @click="loadMore" class="text-gray-500 hover:underline hover:text-gray-100 text-sm">
+              Load More...
             </button>
           </div>
           <div v-else>
-            <a
-              class="hover:underline hover:text-gray-100 text-gray-500 p-1"
-              href="https://github.com/rodionsibov"
-              target="_blank"
-              >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
-            ></a>
+            <div class="my-10">
+              👉
+              <a
+                href="https://github.com/rodionsibov"
+                target="_blank"
+                class="hover:underline"
+                >Visit My Github <i class="fab fa-github fa-lg fa-fw"></i
+              ></a>
+            </div>
           </div>
         </div>
         <div>
-          <div class="text-xl font-semibold text-center">
-            Development Skills
-          </div>
-          <ul class="flex justify-center gap-3 p-4">
+          <div class="text-2xl mt-20 mb-5">Development Skills</div>
+          <ul class="space-x-2">
             <li
               v-for="(skill, index) in skills"
               :key="index"
-              class="text-sm font-semibold px-2 py-1 rounded bg-gray-800"
+              class="
+                rounded
+                bg-gray-700
+                text-white
+                font-bold
+                inline-block
+                px-2
+                py-1
+                hover:bg-gray-600
+              "
             >
               {{ skill }}
             </li>
@@ -110,8 +105,9 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {}, 3000);
-    this.fetchData();
+    setTimeout(() => {
+      this.fetchData();
+    }, 1000);
   },
   methods: {
     async fetchData() {
@@ -154,5 +150,4 @@ export default {
 </script>
 
 <style>
-
 </style>
