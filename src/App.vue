@@ -1,6 +1,5 @@
 <template>
   <div class="antialiased text-gray-100 bg-gray-900">
-
     <div class="flex scroll-snap-x overflow-scroll no-scrollbar">
       <router-view />
     </div>
@@ -20,11 +19,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      visible: false,
-    };
-  },
   computed: {
     date() {
       return new Date().getFullYear();
