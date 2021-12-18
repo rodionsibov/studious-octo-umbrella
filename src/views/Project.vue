@@ -16,7 +16,7 @@
           {{ project.description }}
         </div>
       </div>
-      <div class="my-10">
+      <div class="my-10" v-if="project">
         <a :href="project.html_url" class="">
           <i class="fab fa-github fa-lg fa-fw"></i>
           View the Code
