@@ -51,9 +51,6 @@ export default {
   components: {
     LoginFormCustomInput,
   },
-  props: {
-    isVisible: Boolean,
-  },
   data() {
     return {
       title: "Login Form",
