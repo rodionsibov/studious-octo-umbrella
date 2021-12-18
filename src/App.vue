@@ -4,7 +4,7 @@
       <router-link :to="{ name: 'Home' }">😉rodionsibov/</router-link>
     </div>
     <div class="md:w-1/2 m-auto">
-      <div
+      <nav
         class="
           p-6
           md:p-3
@@ -23,12 +23,9 @@
         >
           {{ page }}
         </router-link>
-      </div>
+      </nav>
 
-      <div v-show="isVisible" class="p-2">
-        <LoginForm />
-      </div>
-
+      <LoginForm :isVisible="isVisible" />
       <button
         @click="isVisible = !isVisible"
         class="

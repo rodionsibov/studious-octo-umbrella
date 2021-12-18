@@ -18,7 +18,7 @@ export default {
         return this.modelValue;
       },
       set(value) {
-        this.$emit("updata:modelValue", value);
+        this.$emit("update:modelValue", value);
       },
     },
   },
