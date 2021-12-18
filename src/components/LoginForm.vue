@@ -1,8 +1,8 @@
 <template>
-  <form v-if="isVisible"
+  <form
     @submit.prevent="handleSubmit"
     class="
-      my-10
+      mx-4 md:m-0 md:my-10
       bg-gray-900
       shadow-lg
       p-4
@@ -27,7 +27,7 @@
       <button class="hover:underline">Log in</button>
     </div>
     <svg
-      @click="isVisible = !isVisible"
+      @click="$router.push('/')"
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6 absolute right-2 top-2 hover:opacity-70 cursor-pointer"
       fill="none"

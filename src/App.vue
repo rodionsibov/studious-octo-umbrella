@@ -3,49 +3,25 @@
     <div class="bg-gray-900 inline-block p-3 font-bold rounded-br">
       <router-link :to="{ name: 'Home' }">😉 rodionsibov/</router-link>
     </div>
-    <div class="md:w-1/2 m-auto">
-      <nav
-        class="
-          p-6
-          md:p-3
-          space-y-4
-          text-2xl
-          md:space-x-4
-          flex flex-col
-          md:flex-row md:space-y-0 md:text-base
-        "
-      >
-        <router-link
-          v-for="page in pages"
-          :key="page"
-          :to="{ name: page }"
-          class="hover:underline"
-        >
-          {{ page }}
-        </router-link>
-      </nav>
-      <LoginForm />
-      <div class="p-2">
+    <div class="md:w-11/12 m-auto p-4">
+      <TheNavigation />
+      <main class="p-2">
         <router-view />
-      </div>
+      </main>
     </div>
   </div>
 </template>
 
 <script>
-import LoginForm from "@/components/LoginForm.vue";
+import TheNavigation from "./components/TheNavigation.vue";
 
 export default {
-  components: { LoginForm },
-  data() {
-    return {
-      pages: ["Home", "Projects", "About"],
-    };
-  },
+  components: { TheNavigation },
 };
 </script>
 
-<style>
+<style scoped>
+.router-link-active,
 .router-link-exact-active {
   font-weight: bold;
 }
