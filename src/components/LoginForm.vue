@@ -1,5 +1,5 @@
 <template>
-  <form v-show="isVisible"
+  <form v-if="isVisible"
     @submit.prevent="handleSubmit"
     class="
       my-10
@@ -51,7 +51,9 @@ export default {
   components: {
     LoginFormCustomInput,
   },
-  props: ['isVisible'],
+  props: {
+    isVisible: Boolean,
+  },
   data() {
     return {
       title: "Login Form",
