@@ -2,8 +2,8 @@
   <div class="">
     <div class="my-10">
       <img class="" src="https://picsum.photos/400" alt="" />
-      <div class="my-3">
-        <div class="my-5 text-sm text-gray-500">
+      <div class="my-3" v-if="project">
+        <div class="my-5 text-sm text-gray-400">
           Updated at:
           <span class="font-bold">
             {{ updated }}
@@ -13,11 +13,11 @@
           {{ name }}
         </div>
         <div class="">
-          {{ $route.params.description }}
+          {{ project.description }}
         </div>
       </div>
       <div class="my-10">
-        <a :href="$route.params.url" class="">
+        <a :href="project.html_url" class="">
           <i class="fab fa-github fa-lg fa-fw"></i>
           View the Code
           <svg
@@ -42,13 +42,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      project: null,
+    };
+  },
   computed: {
     name() {
-      return this.$route.params.name?.replaceAll("-", " ") || "Title";
+      return this.project.name.replaceAll("-", " ")
     },
     updated() {
-      return new Date(this.$route.params.updated).toDateString();
+      return new Date(this.project.updated_at).toDateString();
     },
+  },
+  async created() {
+    try {
+      const res = await fetch(
+        `${process.env.VUE_APP_API_PROJECT}/${this.$route.params.id}`
+      );
+      const data = await res.json();
+      this.project = data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

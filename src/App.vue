@@ -57,7 +57,7 @@ export default {
   components: { LoginForm },
   data() {
     return {
-      isVisible: true,
+      isVisible: false,
       pages: ["Home", "Projects", "About"],
     };
   },

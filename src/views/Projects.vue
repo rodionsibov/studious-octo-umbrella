@@ -113,7 +113,7 @@ export default {
     async fetchData() {
       try {
         const res = await fetch(
-          `${process.env.VUE_APP_API}?per_page=${this.perPage}&page=${this.page}`
+          `${process.env.VUE_APP_API_PROJECTS}?per_page=${this.perPage}&page=${this.page}`
         );
         const data = await res.json();
         this.projects = data;
